@@ -10,7 +10,7 @@ app = Flask(__name__)
 all_contact = []
 
 # configure the SQLite database, relative to the app instance folder, create database
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///ContactList.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DB_URI", "sqlite:///ContactList.db")
 
 # create the extension
 db = SQLAlchemy()
@@ -58,4 +58,4 @@ def addcontact():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
