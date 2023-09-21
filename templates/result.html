@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='password.css')}}" />
+</head>
+<body>
+
+{% extends "layout.html" %}
+{% block title %}
+Transaction Result
+{% endblock %}
+{% block content %}
+ {% for con in contacts %}
+    <strong>The Phone number of {{con.name}} is:</strong> {{con.number}}
+
+    {% endfor %}
+
+{% endblock %}
+
+
+</body>
+</html>
